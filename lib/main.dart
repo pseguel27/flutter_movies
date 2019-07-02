@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_peliculas/src/pages/home_page.dart';
+
 //snippet mateApp para iniciar proyecto hw 
 void main() => runApp(MyApp());
  
