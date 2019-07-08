@@ -77,4 +77,14 @@ class Pelicula {
   }
 
 
+  getBackgroundImg(){
+
+    if( posterPath == null ){
+      return 'https://doc.louisiana.gov/assets/camaleon_cms/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png';
+    }else{
+      return 'https://image.tmdb.org/t/p/w500/$backdropPath';
+    }
+  }  
+
+
 }
