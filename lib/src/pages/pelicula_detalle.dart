@@ -62,11 +62,14 @@ class PeliculaDetalle extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 20.0),
       child: Row(
         children: <Widget>[
-          ClipRRect(
-            borderRadius: BorderRadius.circular(20.0),
-            child: Image(
-              image: NetworkImage( pelicula.getPosterImg() ),
-              height: 150.0,
+          Hero(
+            tag: pelicula.id,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20.0),
+              child: Image(
+                image: NetworkImage( pelicula.getPosterImg() ),
+                height: 150.0,
+              ),
             ),
           ),
           SizedBox( width: 20.0 ),
@@ -112,10 +115,8 @@ Widget _crearCasting( context, Pelicula pelicula ){
       if( snapshot.hasData ){
         return _crearActoresPageView( snapshot.data );
       }else{
-        return Center( child: CircularProgressIndicator());
+        return Center( child: CircularProgressIndicator() );
       }
-
-
     },
   );
 
