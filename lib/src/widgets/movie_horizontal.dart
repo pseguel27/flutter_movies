@@ -34,13 +34,13 @@ class MovieHorizontal extends StatelessWidget {
         pageSnapping: false,
         controller: _pageController,
         itemCount: peliculas.length,
-        itemBuilder: ( context,i  ) => _tarjeta( context, peliculas[i] ),
+        itemBuilder: ( context,i  ) => _tarjeta( context, peliculas[i], _screenSize ),
         //children: _tarjetas( context ),
       ),
     );
   }
 
-  Widget _tarjeta( BuildContext context, Pelicula pelicula){
+  Widget _tarjeta( BuildContext context, Pelicula pelicula, Size screen ){
 
       pelicula.uniqueId = '${ pelicula.id }-poster';
 
@@ -56,7 +56,7 @@ class MovieHorizontal extends StatelessWidget {
                   image: NetworkImage( pelicula.getPosterImg() ),
                   placeholder: AssetImage('assets/img/no-image.jpg'),
                   fit: BoxFit.cover,
-                  height: 160.0,
+                  height: screen.height * 0.2,
                 ),
               ),
             ),
